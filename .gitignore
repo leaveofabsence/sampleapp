@@ -16,6 +16,7 @@
 
 .idea/inspectionProfiles/
 .idea/workspace.xml
+.idea/sampleapp2.iml
 .idea/vcs.xml
 .vscode/
 bin/
