@@ -14,6 +14,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'rspec-rails', '2.9.0'
+  gem 'ruby-debug-ide', '0.6.0'
+  gem 'ruby-debug-base19x'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
