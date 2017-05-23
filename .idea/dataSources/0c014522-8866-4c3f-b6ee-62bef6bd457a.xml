@@ -53,10 +53,22 @@
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="21" parent="12" name="PRIMARY">
+    <column id="21" parent="12" name="password_digest">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="22" parent="12" name="index_users_on_email">
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
+    </key>
+    <key id="24" parent="12" name="index_users_on_email">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>index_users_on_email</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
