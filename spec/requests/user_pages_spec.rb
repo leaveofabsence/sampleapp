@@ -34,7 +34,8 @@ describe "UserPages" do
         before { click_button submit}
 
         it {should have_selector('title', text: 'Sign up')}
-        it {should have_selector('.alert-error', text: /The form contains \d error(s)?/)}
+        it {should have_error_message(/The form contains \d error(s)?/)}
+        #it {should have_selector('.alert-error', text: /The form contains \d error(s)?/)}
       end
     end
 
@@ -55,7 +56,9 @@ describe "UserPages" do
         let(:user) { User.find_by_email('joe@horton.com')}
 
         it { should have_selector('title', text: user.name)}
-        it { should have_selector('div.alert.alert-success', text: 'Welcome')}
+        it {should have_success_message('Welcome')}
+        #it { should have_selector('div.alert.alert-success', text: 'Welcome')}
+        it { should have_link('Sign out')}
       end
     end
   end
