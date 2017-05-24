@@ -2,11 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.5'
 gem 'bootstrap-sass', '2.0.0'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'faker', '1.0.1'
 gem 'mysql2', '~> 0.3.10'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
 
 
 # Gems used only for assets and not required
@@ -31,7 +31,7 @@ group :test do
 end
 
 # To use ActiveModel has_secure_password
- gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

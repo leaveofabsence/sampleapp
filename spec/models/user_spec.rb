@@ -12,9 +12,26 @@ describe User do
   it {should respond_to(:password)}
   it {should respond_to(:password_confirmation)}
   it {should respond_to(:remember_token)}
+  it {should respond_to(:admin)}
   it {should respond_to(:authenticate)}
 
   it {should be_valid}
+  it {should_not be_admin}
+
+  describe 'inaccessible attributes' do
+    it 'should not allow assignment to the admin attribute' do
+      expect do
+        User.new(admin: true)
+      end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
+    end
+  end
+
+
+  describe 'with admin attribute set to true' do
+    before {@user.toggle!(:admin)}
+
+    it {should be_admin}
+  end
 
   describe 'return value of authenticate method' do
     before {@user.save}
