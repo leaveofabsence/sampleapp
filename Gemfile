@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.5'
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass', '3.1.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker', '1.0.1'
 gem 'mysql2', '~> 0.3.10'
@@ -23,6 +23,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'rubocop', require: false
+end
 
 group :test do
   gem 'nokogiri', '<1.7.0'

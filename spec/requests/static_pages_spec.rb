@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "StaticPages" do
+describe 'StaticPages' do
 
   subject {page}
 
@@ -24,7 +24,7 @@ describe "StaticPages" do
     page.should have_selector('title', text: 'Sample App')
   end
 
-  describe "Home page" do
+  describe 'Home page' do
 
     before {visit root_path}
 
@@ -33,9 +33,28 @@ describe "StaticPages" do
 
     it_should_behave_like 'all static pages'
 
+    describe 'for signed-in users' do
+      let(:user) {FactoryGirl.create(:user)}
+      before do
+        FactoryGirl.create(:micropost, user: user, content: 'Lorem ipsum')
+        FactoryGirl.create(:micropost, user: user, content: 'Dolor sit amet')
+        sign_in user
+        visit root_path
+      end
+
+      it 'should render the users feed' do
+        user.feed.each do |item|
+          page.should have_selector("li##{item.id}", text: item.content)
+        end
+      end
+
+      it {should have_content(user.microposts.count)}
+      it {should have_content("#{user.microposts.count} microposts")}
+    end
+
   end
 
-  describe "Contact page" do
+  describe 'Contact page' do
 
     before {visit contact_path}
 
