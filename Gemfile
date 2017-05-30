@@ -6,7 +6,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'faker', '1.0.1'
 gem 'mysql2', '~> 0.3.10'
 gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 
 # Gems used only for assets and not required
