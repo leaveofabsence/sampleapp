@@ -30,6 +30,23 @@ describe User do
     end
   end
 
+  describe 'relationship associations' do
+    let(:other_user) {FactoryGirl.create(:user)}
+    before do
+      @user.save
+      @user.follow!(other_user)
+    end
+
+    it 'should destroy associated relationships' do
+      relationships = @user.relationships;
+      @user.destroy
+      relationships.each do |r|
+        Relationship.find_by_follower_id(r.follower_id).should be nil
+      end
+    end
+
+  end
+
   describe 'micropost associations' do
 
     before {@user.save}
@@ -41,7 +58,7 @@ describe User do
     end
 
     it 'should have microposts in the correct order' do
-      @user.microposts.by_date.should == [newer_micropost, older_micropost]
+      @user.microposts.should == [newer_micropost, older_micropost]
     end
 
     it 'should destroy associated microposts' do

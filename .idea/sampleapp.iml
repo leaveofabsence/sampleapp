@@ -134,7 +134,6 @@
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.3.0, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt-ruby (v3.0.1, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.1.1.0, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bootstrap-will_paginate (v0.0.6, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.0.4, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.15.0, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v1.1.2, RVM: ruby-1.9.3-p551 [sampleapp2]) [gem]" level="application" />
